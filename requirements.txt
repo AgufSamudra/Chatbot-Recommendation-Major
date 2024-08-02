@@ -6,4 +6,4 @@ langchain-google-genai
 sentence-transformers
 streamlit
 beautifulsoup4
-keras
+keras==2.15.0
