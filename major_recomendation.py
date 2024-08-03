@@ -14,6 +14,10 @@ from bs4 import BeautifulSoup
 import json
 from tensorflow import keras
 
+import sys
+print(sys.executable)
+
+
 @st.cache_resource(show_spinner="Downloading Model...")
 def load_models():
     sentence_embed_model = SentenceTransformer("firqaaa/indo-sentence-bert-base")
