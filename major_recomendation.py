@@ -12,7 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import requests
 from bs4 import BeautifulSoup
 import json
-from tensorflow import keras
+from keras.models import load_model
 
 import sys
 print(sys.executable)
@@ -30,7 +30,7 @@ def predict_major(input_text: str, model_path="model_rnn_bert.h5", embed_model_n
     with open('BERT_Embedding_Dataset.pkl', 'rb') as f:
         _, _, label_encoder = pickle.load(f)
     
-    model = tf.keras.models.load_model(model_path)
+    model = load_model(model_path)
     
     # Embed the input text
     embedded_text = embed_model_name.encode([input_text])
